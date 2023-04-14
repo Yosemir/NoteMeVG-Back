@@ -39,7 +39,7 @@ public class Notas {
 	}
 	
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://35.203.38.167:80")
 	@GetMapping("/get/{correo}")
 	public Object getNotas(@PathVariable String correo) {
 	    try {
