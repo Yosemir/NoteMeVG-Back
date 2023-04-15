@@ -10,17 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Slf4j
 @RestController
 @RequestMapping(path = "api/v1/getNotas")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
 public class notasC {
 
 	private static final Logger logger = LoggerFactory.getLogger(notasC.class);
 	private final RestTemplate restTemplate = new RestTemplate();
 	
-	@CrossOrigin(origins = "http://35.203.38.167:80")
+	
 	@GetMapping("/get/{correo}")
 	public Object getNotas(@PathVariable String correo) {
 	    try {
